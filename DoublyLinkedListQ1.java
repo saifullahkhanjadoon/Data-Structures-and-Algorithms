@@ -15,18 +15,17 @@ class NTS {
 }
 
 class DoublyLinkedListQ1 {
-    NTS head;
+    NTS first;
 
-    // Insert student at end
     void insert(int id, String name, int marks, String addr) {
         NTS newNode = new NTS(id, name, marks, addr);
 
-        if (head == null) {
-            head = newNode;
+        if (first == null) {
+            first = newNode;
             return;
         }
 
-        NTS temp = head;
+        NTS temp = first;
         while (temp.next != null) {
             temp = temp.next;
         }
@@ -36,7 +35,7 @@ class DoublyLinkedListQ1 {
 
     int size() {
         int count = 0;
-        NTS temp = head;
+        NTS temp = first;
         while (temp != null) {
             count++;
             temp = temp.next;
@@ -46,7 +45,7 @@ class DoublyLinkedListQ1 {
 
     void count_pass_fail() {
         int pass = 0, fail = 0;
-        NTS temp = head;
+        NTS temp = first;
 
         while (temp != null) {
             if (temp.marks_obt >= 50) {
@@ -64,15 +63,15 @@ class DoublyLinkedListQ1 {
     }
 
     void deleteFailStudents() {
-        NTS temp = head;
+        NTS temp = first;
 
         while (temp != null) {
             if (temp.marks_obt < 50) {
                 // If node is head
-                if (temp == head) {
-                    head = head.next;
-                    if (head != null) {
-                        head.prev = null;
+                if (temp == first) {
+                    first = first.next;
+                    if (first != null) {
+                        first.prev = null;
                     }
                 } else {
                     temp.prev.next = temp.next;
@@ -86,7 +85,7 @@ class DoublyLinkedListQ1 {
     }
 
     void printList() {
-        NTS temp = head;
+        NTS temp = first;
         while (temp != null) {
             System.out.println("id--> "+temp.std_id + " | name--> " + temp.std_name + " | marks--> " + temp.marks_obt + " | address--> " + temp.address);
             temp = temp.next;
