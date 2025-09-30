@@ -21,11 +21,11 @@ public class LnkedListQ2 {
         while (temp2.next != null) {
             temp2 = temp2.next;
         }
-        temp2.next = temp;  // fixed from temp.next=temp;
+        temp2.next = temp;  
     }
 
     void deleteSamallest() {
-        if (first == null) return; // avoid null pointer
+        if (first == null) return; 
 
         node temp = first;
         node smallest = first;
@@ -44,7 +44,7 @@ public class LnkedListQ2 {
         if (presmall == null) {
             first = first.next;
         } else {
-            presmall.next = smallest.next;  // fixed from presmall=smallest.next;
+            presmall.next = smallest.next; 
         }
     }
 
