@@ -223,7 +223,7 @@ class LinkedList implements Serializable
             System.out.println(" Timber with ID " + id + " not found!");
         } else {
             System.out.println(" DELETED: Timber ID " + id + " - " + temp.next.kind);
-            temp.next = temp.next.next;  // Bypass the node to delete it
+            temp.next = temp.next.next;  
         }
     }
 
