@@ -11,7 +11,7 @@ public class HospitalPriorityQ {
         size = 0;
     }
 
-    // Enqueue: Insert patient based on severity (higher severity → higher priority)
+    
     public void enqueue(int id, String name, int severity) {
         if (size == patientIDs.length) {
             System.out.println("Queue is full!");
@@ -19,7 +19,7 @@ public class HospitalPriorityQ {
         }
 
         int i;
-        // Shift patients with lower severity to the right
+        
         for (i = size - 1; i >= 0; i--) {
             if (severityLevels[i] < severity) {
                 patientIDs[i + 1] = patientIDs[i];
